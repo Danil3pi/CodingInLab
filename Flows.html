@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flows</title>
 </head>
+
 <body>
-    
+    <h2>Methods of layout!</h2>
+    <ol>
+        <li>display:
+            <ul>
+                <li>block</li>
+                <li>inline</li>
+                <li>inline-block</li>
+                <li>
+                    <h3>Для изменения разметки!</h3>
+                </li>
+                <li>flex</li>
+                <li>grid</li>
+            </ul>
+        </li>
+        <li>float</li>
+        <li>position
+            <ul>
+                <li>absolute</li>
+                <li>relative</li>
+                <li>stycky</li>
+                <li>fixed</li>
+            </ul>
+        </li>
+        <li>display: table</li>
+        <li>multi-column layout</li>
+    </ol>
+
+    <h1>flex</h1>
+    <div class="flex">
+        <div class='inner-flex'>1</div>
+        <div class='inner-flex'>2</div>
+        <div class='inner-flex'>3</div>
+    </div>
+    <style>
+        .flex {
+            display: flex;
+            border: 1px solid palegoldenrod;
+        }
+
+        .inner-flex {
+            width: 200px;
+            margin: 5px;
+            border: 2px solid black;
+
+            text-align: center;
+
+            flex: 1;
+        }
+    </style>
 </body>
+
 </html>
