@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            box-sizing: border-box;
+            margin: 0; padding: 0;
+        }
+        
         body {
             width: 90%;
             max-width: 900px;
@@ -13,30 +19,71 @@
             font: .9em/1.2 Arial, Helvetica, sans-serif;
         }
 
-        .container{
+        .container {
+            min-height: 90vh;
+            width: 900px;
             display: grid;
-            grid-template-columns: 1.3fr 1fr 1fr;
-            gap: 2em;
+            /* grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px repeat(2, 1fr);
+            grid-template-areas:
+                'header header header header'
+                'main main . sidebar'
+                'footer footer footer footer' */
+            ;
+            /* grid-auto-rows: 100px; */
+            /*  */
+            grid-template: 
+                'header header header' 50px     
+                [row2-start] 'main . sidebar' 2fr [row2-end]
+                'footer footer footer' 400px /
+                [col1-start]200px[col1-end] 200px 200px;
+            /* row-gap: 10px;
+            column-gap: 20px; */
+            gap: 40px 10px;
+
+            align-items: center;
         }
-        .container > div {
+
+
+        header {
+            grid-area: header;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .container>div,
+        header,
+        main,
+        footer {
             border-radius: 5px;
             padding: 10px;
-            background-color: rgb(207,232,220);
-            border: 2px solid rgb(79,185,227);
+            background-color: rgb(207, 232, 220);
+            border: 2px solid rgb(79, 185, 227);
         }
     </style>
 </head>
+
 <body>
     <h1>Simple grid example</h1>
 
     <div class="container">
-        <div>One</div>
-        <div>Two</div>
-        <div>Three</div>
-        <div>Four</div>
-        <div>Five</div>
-        <div>Six</div>
-        <div>Seven</div>
+        <header>Header</header>
+        <main>Main</main>
+        <div class='sidebar'>Sidebar</div>
+        <footer>Footer</footer>
     </div>
 </body>
+
 </html>
